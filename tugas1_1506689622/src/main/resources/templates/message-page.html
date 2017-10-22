@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${msgTitle}">Title Message</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap-theme.css}" />
+	</head>
+	<body>
+		<div th:replace="fragments/fragment :: navbar"></div>
+		<br/>
+		<br/>
+		<br/>
+		<div class="container">
+			<h1 th:text="${msg}">Message Header</h1>
+       		<h3 th:text="${msgContent}">Content</h3>
+		</div>
+		
+	</body>
+</html>

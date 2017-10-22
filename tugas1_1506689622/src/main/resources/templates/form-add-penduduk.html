@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Tambah Penduduk</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap-theme.css}" />
+	</head>
+	<body>
+		<div th:replace="fragments/fragment :: navbar"></div>
+		<br/>
+		<br/>
+		<br/>
+		<div class="container">
+			<h3><b>Tambah Penduduk</b></h3><br/><br/>
+			<form action="/penduduk/tambah" method="post">
+				<div>
+					<label for="nama">Masukkan Nama</label>
+					<input class="form-control" type="text" name="nama" placeholder="Nama Penduduk"/>
+				</div>
+				<br/>
+				<div>
+					<label for="tempatLahir">Tempat Lahir</label>
+					<input class="form-control" type="text" name="tempatLahir" placeholder="Tempat Kelahiran Penduduk"/>
+				</div>
+				<br/>
+				<div>
+					<label for="tanggalLahir">Tanggal Lahir</label>
+					<input class="form-control" type="text" name="tanggalLahir" placeholder="Format TTTT-BB-HH, Contoh: 1945-08-17 Untuk Kelahiran 17 Agustus 1945" />
+				</div>
+				<br/>
+				<div>
+					<label for="jenisKelamin">Jenis Kelamin</label>
+					<select class="form-control" name="jenisKelamin">
+						<option value="Pria">Pria</option>
+						<option value="Wanita">Wanita</option>
+					</select>
+				</div>
+				<br/>
+				<div>
+					<label for="golonganDarah">Golongan Darah</label>
+					<select class="form-control" name="golonganDarah">
+						<option value="A+">A+</option>
+						<option value="A-">A-</option>
+						<option value="B+">B+</option>
+						<option value="B-">B-</option>
+						<option value="O+">O+</option>
+						<option value="O-">O-</option>
+						<option value="AB+">AB+</option>
+						<option value="AB-">AB-</option>
+					</select>
+				</div>
+				<br/>
+				<div>
+					<label for="agama">Agama</label>
+					<input class="form-control" type="text" name="agama" placeholder="Agama Penduduk" />
+				</div>
+				<br/>
+				<div>
+					<label for="statusPerkawinan">Status Perkawinan</label>
+					<select class="form-control" name="statusPerkawinan">
+						<option value ="Kawin">Kawin</option>
+						<option value = "Belum Kawin">Belum Kawin</option>
+					</select>
+				</div>
+				<br/>
+				<div>
+					<label for="pekerjaan">Pekerjaan</label>
+					<input class="form-control" type="text" name="pekerjaan" placeholder="Pekerjaan Penduduk" />
+				</div>
+				<br/>
+				<div>
+					<label for="kewarganegaraan">Kewarganegaraan</label>
+					<select class="form-control" name="kewarganegaraan">
+						<option value = "WNI">WNI</option>
+						<option value = "WNA">WNA</option>
+					</select>
+				</div>
+				<br/>
+				<div>
+					<label for="statusKematian">Status Kematian</label>
+					<select class="form-control" name="statusKematian">
+						<option value = "Hidup">Hidup</option>
+						<option value = "Wafat">Wafat</option>
+					</select>
+				</div>
+				<br/>
+				<div>
+					<label for="idKeluarga">Id Keluarga</label>
+					<input class="form-control" type="text" name="idKeluarga" placeholder="ID Keluarga Penduduk"/>
+				</div>
+				<br/>
+				<div>
+					<label for="statusDalamKeluarga">Status dalam Keluarga</label>
+					<input class="form-control" type="text" name="statusDalamKeluarga" placeholder="Status Penduduk dalam Keluarga" />
+				</div>
+				<br/>
+				<div>
+					<button class="btn btn-primary" type="submit" name="action" value="save">Simpan</button>
+				</div>
+			</form>
+			<br/>
+			<br/>
+			<br/>
+		</div>
+	</body>
+</html>

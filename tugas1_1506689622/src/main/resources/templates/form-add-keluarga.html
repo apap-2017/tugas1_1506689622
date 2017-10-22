@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Tambah Keluarga</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap-theme.css}" />
+	</head>
+	<body>
+		<div th:replace="fragments/fragment :: navbar"></div>
+		<br/>
+		<br/>
+		<br/>
+		<div class="container">
+			<h3><b>Tambah Keluarga</b></h3><br/><br/>
+			<form action="/keluarga/tambah" method="post">
+				<div>
+					<label for="nama">Alamat</label>
+					<input class="form-control" type="text" name="alamat" placeholder="Alamat Keluarga"/>
+				</div>
+				<br/>
+				<div>
+					<label for="tempatLahir">RT</label>
+					<input class="form-control" type="text" name="rt" placeholder="RT"/>
+				</div>
+				<br/>
+				<div>
+					<label for="tempatLahir">RW</label>
+					<input class="form-control" type="text" name="rw" placeholder="RW"/>
+				</div>
+				<br/>
+				<div>
+					<label for="tempatLahir">Kelurahan/Desa</label>
+					<input class="form-control" type="text" name="kelurahan" placeholder="Kelurahan"/>
+				</div>
+				<br/>
+				<div>
+					<label for="tempatLahir">Kecamatan</label>
+					<input class="form-control" type="text" name="kecamatan" placeholder="Kecamatan"/>
+				</div>
+				<br/>
+				<div>
+					<label for="tempatLahir">Kota</label>
+					<input class="form-control" type="text" name="kota" placeholder="Kota"/>
+				</div>
+				<br/>
+				<div>
+					<button class="btn btn-primary" type="submit" name="action" value="save">Simpan</button>
+				</div>
+			</form>
+			<br/>
+			<br/>
+			<br/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lihat Keluarga Berdasarkan NKK</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css" />
+    </head>
+    <body>
+    	<div th:replace="fragments/fragment :: navbar"></div>
+		<div class="jumbotron" style="background-color:#2574a9;color:#fff;">
+			<div class="container">
+				<br/><br/><br/><br/>
+				<div style="font-weight:bold">
+		    		<h3><b>Lihat Data Keluarga - <span th:text="${keluarga.nomorKk}"></span></b></h3>
+		    	</div>
+		    	<br/><br/><br/><br/>
+	    	</div>
+		</div>
+		<div class="container">
+	    	
+	    	<br/>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h4><b>NKK</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${keluarga.nomorKk}">Keluarga NKK</h4>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h4><b>Alamat</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${keluarga.alamat}">Keluarga Alamat</h4>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h4><b>RT/RW</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${keluarga.rt}+'/'+${keluarga.rw}">Keluarga RT/RW</h4>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h4><b>Kelurahan/Desa</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${kelurahan.namaKelurahan}">Kelurahan</h4>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h4><b>Kecamatan</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${kecamatan.namaKecamatan}">Kecamatan</h4>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h4><b>Kota</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${kota.namaKota}">Kota</h4>
+	    		</div>
+	    	</div>
+	    	<br/>
+	    	<b><h2><hr style="border:1px solid black; height:0px;"/></h2></b>
+	    	<br/>
+	    	<table class="table table-hover">
+	    		<thead><tr>
+	    			<th>No.</th>
+	    			<th>Nama Lengkap</th>
+	    			<th>NIK</th>
+	    			<th>Jenis Kelamin</th>
+	    			<th>Tempat Lahir</th>
+	    			<th>Tanggal Lahir</th>
+	    			<th>Agama</th>
+	    			<th>Pekerjaan</th>
+	    			<th>Status Perkawinan</th>
+	    			<th>Status dalam Keluarga</th>
+	    			<th>Kewarganegaraan</th>
+	    		</tr></thead>
+	    		<tbody>
+		    		<tr th:each="penduduk,iterationStatus: ${keluarga.anggotaKeluarga}">
+				       	<td th:text="${iterationStatus.count}">No</td>
+				       	<td th:text="${penduduk.nama}">
+				       		Nama Angota
+				       	</td>
+				       	<td th:text="${penduduk.nik}">
+				       		NIK Angota
+				       	</td>
+				       	<td th:text="${penduduk.jenisKelaminString}">
+				       		Jenis Kelamin Angota
+				       	</td>
+				       	<td th:text="${penduduk.tempatLahir}">
+				       		Tempat Lahir Anggota
+				       	</td>
+				       	<td th:text="${penduduk.tanggalLahir}">
+				       		Tanggal Lahir Anggota
+				       	</td>
+				       	<td th:text="${penduduk.agama}">
+				       		Agama Anggota
+				       	</td>
+				       	<td th:text="${penduduk.pekerjaan}">
+				       		Pekerjaan Anggota
+				       	</td>
+				       	<td th:text="${penduduk.statusPerkawinan}">
+				       		Status Kawin Anggota
+				       	</td>
+				       	<td th:text="${penduduk.statusDalamKeluarga}">
+				       		Status Dalam Keluarga Anggota
+				       	</td>
+				       	<td th:text="${penduduk.kewarganegaraan}">
+				       		Kewarganegaraan Anggota
+				       	</td>
+		    		</tr>
+	    		</tbody>
+	    	</table>
+    	</div>
+    	<br/>
+    	<br/>
+    </body>
+</html>
+

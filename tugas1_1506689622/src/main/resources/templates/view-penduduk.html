@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lihat Penduduk Berdasarkan NIK</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css" />
+    </head>
+    <body>
+    	<div th:replace="fragments/fragment :: navbar"></div>
+		<div class="jumbotron" style="background-color:#2574a9;color:#fff;">
+			<div class="container">
+				<br/><br/><br/><br/>
+				<div style="font-weight:bold">
+		    		<h3><b>Lihat Data Penduduk - <span th:text="${penduduk.nik}"></span></b></h3>
+		    	</div>
+		    	<br/>
+		    	<form action="/penduduk/mati" method="post" th:object="${penduduk}">
+		    		<div class="hidden">
+						<label for="nikInput">NIK</label>
+						<input class="form-control" name="nikInput" th:value="${penduduk.nik}" th:field="*{nik}"/>
+					</div>
+		    		<button class="btn btn-danger" type="submit" name="action" value="save">Ubah Status Kematian</button>
+		    	</form>
+		    	<br/><br/><br/>
+	    	</div>
+		</div>
+		<div class="container">
+	    	<br/>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h4><b>NIK</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.nik}">Penduduk NIK</h4>
+	    		</div>
+	    	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Nama</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text=" ${penduduk.nama}">Penduduk Nama</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Tempat/Tanggal Lahir</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.tempatLahir} + ', ' + ${penduduk.tanggalLahir}">Penduduk TTL</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Alamat</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${keluarga.alamat}">Penduduk Alamat</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>RT/RW</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${keluarga.rt} + '/' + ${keluarga.rw}">Penduduk RT/RW</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Kelurahan/Desa</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${kelurahan.namaKelurahan}">Penduduk Kelurahan</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Kecamatan</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${kecamatan.namaKecamatan}">Penduduk Kecamatan</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Kota</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${kota.namaKota}">Penduduk Kota</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Golongan Darah</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.golonganDarah}">Penduduk Goldar</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Agama</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.agama}">Penduduk Agama</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Status Perkawinan</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.statusPerkawinan}">Penduduk Status Kawin</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Pekerjaan</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.pekerjaan}">Penduduk Pekerjaan</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Kewarganegaraan</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.kewarganegaraan}">Penduduk Kewarganegaraan</h4>
+	    		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-sm-3">
+	    			<h4><b>Status Kematian</b></h4>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<h4 th:text="${penduduk.statusKematian}">Penduduk HidupMati</h4>
+	    		</div>
+	       	</div>
+    	</div>
+    	<br/>
+    	<br/>
+    </body>
+</html>
+

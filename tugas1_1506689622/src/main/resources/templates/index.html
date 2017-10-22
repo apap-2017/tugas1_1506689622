@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Sistem Informasi Kependudukan Online Provinsi DKI Jakarta</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap-theme.css}" />
+	</head>
+	<body>
+		<div th:replace="fragments/fragment :: navbar"></div>
+		<div class="jumbotron" style="background-color:#c91f37;color:#fff;">
+			<div class="container">
+				<br/><br/><br/><br/>
+				<center>
+				<h2>Sistem Informasi Kependudukan Online</h2>
+				<h1>Provinsi DKI Jakarta</h1>
+				<br/>
+				</center>
+				<br/><br/><br/><br/>
+			</div>
+		</div>
+		
+		
+		<div class="container">
+			<div class="jumbotron">
+				<div class="container">
+					<h4>Selamat Datang di <br/>Sistem Informasi Kependudukan Online DKI Jakarta</h4>
+				</div>
+			</div>
+			<br/>
+			<div class="row" style="color:#c91f37;">
+				<div class="col-sm-6">
+					<h2>Lihat Data</h2>
+				</div>
+				<!-- div class="col-sm-6">
+					<h2>Tambah Data</h2>
+				</div-->
+			</div>
+			<h2><hr style="border:1px solid #34495e; height:0px;"/></h2>
+			<div class="row">
+				<div class="col-sm-6">
+					<h4>Lihat Data Penduduk Berdasarkan NIK</h4>
+					<form action="/penduduk" method="get">
+						<div>
+							<label for="nik">Masukkan Nomor Induk Kependudukan</label>
+							<br/>
+							<div class="row">
+								<div class="col-sm-5">
+									<input class="form-control" type="text" name="nik" />
+								</div>
+							</div>
+							<br/>
+							<button type="submit" class="btn btn-primary btn-md">Lihat</button>
+						</div>
+					</form>
+					<br/>
+				</div>
+				<!-- div class="col-sm-6">
+					<form action="/penduduk/tambah" method="post">
+						<h4>Tambahkan Penduduk</h4>
+						<h5>Klik tombol "Tambah Penduduk" untuk menambahkan penduduk baru</h5>
+						<button type="submit" class="btn btn-danger btn-lg">Tambah Penduduk</button>
+					</form>
+				</div-->
+			</div>
+			<h2><hr style="border:1px solid #34495e; height:0px;"/></h2>
+			<div class="row">
+				<div class="col-sm-6">
+					<h4>Lihat Data Keluarga Berdasarkan NKK</h4>
+					<form action="/keluarga" method="get">
+						<div>
+							<label for="nik">Masukkan Nomor Kartu Keluarga</label>
+							<br/>
+							<div class="row">
+								<div class="col-sm-5">
+									<input class="form-control" type="text" name="nkk" />
+								</div>
+							</div>
+							<br/>
+							<button type="submit" class="btn btn-primary btn-md">Lihat</button>
+						</div>
+					</form>
+				</div>
+				<!-- div class="col-sm-6">
+					<form action="/keluarga/tambah" method="post">
+						<h4>Tambahkan Keluarga</h4>
+						<h5>Klik tombol "Tambah Keluarga" untuk menambahkan keluarga baru</h5>
+						<button type="submit" class="btn btn-danger btn-lg">Tambah Keluarga</button>
+					</form>
+				</div-->
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</body>
+</html>
